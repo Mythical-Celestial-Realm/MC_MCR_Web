@@ -5,161 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MCR/MC - 墟壤纪</title>
-    <style>
-        body {
-            font-family: '黑体', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #ffffff;
-        }
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #ffffff;
-            margin-bottom: 20px;
-        }
-        .nav a {
-            color: #333;
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: bold;
-        }
-        .nav a:hover {
-            color: #007bff;
-        }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #000;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .button:hover {
-            background-color: #333;
-        }
-        .image-container {
-            text-align: center;
-            margin-bottom: 20px;
-            padding-left: 25px;
-        }
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-        }
-        .section {
-            margin-bottom: 40px;
-            padding-left: 25px;
-        }
-        .section h2 {
-            margin-bottom: 0px;
-            font-size: 48px;
-        }
-        
-        .section p {
-            margin-top: 0px;
-            font-size: 18px;
-            line-height: 1.6;
-        }
-
-        .cards {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        .card {
-            width: 30%;
-            background-color: #e0e0e0;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .card h3 {
-            margin-bottom: 10px;
-        }
-        .card p {
-            margin: 0;
-            font-size: 14px;
-        }
-        .join-container {
-            margin-top: 40px;
-            background-color: #f0f0f0;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-        }
-        .join-container .left {
-            flex: 1;
-        }
-        .join-container .right {
-            text-align: right;
-        }
-        .join-container a {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #000;
-            color: #fff;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-        .join-container a:hover {
-            background-color: #333;
-        }
-        .server-info {
-            margin-top: 40px;
-        }
-        .server-info .cards {
-            margin-top: 20px;
-        }
-        .server-info .card {
-            display: flex;
-            flex-direction: column;
-        }
-        .server-info .card p {
-            margin-top: 10px;
-        }
-        .member-quotes {
-            margin-top: 40px;
-        }
-        .member-quotes .cards {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        .member-quotes .card {
-            background-color: #ffffff;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .member-quotes .card img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-        }
-        .member-quotes .user-info {
-            text-align: center;
-            margin-top: 10px;
-        }
-        .member-quotes .user-name {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        .member-quotes .user-date {
-            font-size: 12px;
-        }
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -184,7 +30,7 @@
 
         <!-- 图像展示 -->
         <div class="image-container">
-            <img src="img//minecraft_screenshot.jpg" alt="Minecraft 截图">
+            <img src="img/minecraft_screenshot.jpg" alt="Minecraft 截图" style="max-width: 100%; height: auto;">
         </div>
 
         <!-- 社区特点说明 -->
@@ -294,5 +140,6 @@
             <p>MCR/MC - 墟壤纪</p>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
