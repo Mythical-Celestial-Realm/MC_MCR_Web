@@ -9,48 +9,58 @@
 </head>
 <body>
     <div class="container">
-        <!-- 顶部导航栏 -->
-        <div class="nav">
-            <div style="font-size: 24px;">MCR/MC - 墟壤纪</div>
-            <div>
-                <a href="#">主页</a>
-                <a href="#">服务器</a>
-                <a href="#">关于</a>
-                <a href="#" class="button">HELP</a>
+        <!-- 全屏头部区域 -->
+        <div class="header">
+            <!-- 顶部导航栏 -->
+            <div class="nav">
+                <div style="font-size: 24px;">MCR/MC - 墟壤纪</div>
+                <div class="links">
+                    <a href="#">主页</a>
+                    <a href="#">服务器</a>
+                    <a href="#">关于</a>
+                    <a href="#" class="button">HELP</a>
+                </div>
+            </div>
+
+            <!-- 主标题和介绍 -->
+            <div class="header-content">
+                <div class="section">
+                    <h2>你……玩我的世界吗？</h2>
+                    <p>你希望找一个和谐的集体吗？你希望找一个陪你玩的朋友吗？<br/>
+                      你希望真正得到公平对待吗？你希望完成自己的想法愿望吗？</p>
+                    <a href="#main-content" class="button start-button">开始</a>
+                </div>
+                
+                <!-- 向下箭头提示 -->
+                <div class="scroll-down">
+                    <span class="arrow-down"></span>
+                </div>
             </div>
         </div>
 
-        <!-- 主标题和介绍 -->
-        <div class="section">
-            <h2>你……玩我的世界吗？</h2>
-            <p>你希望找一个和谐的集体吗？你希望找一个陪你玩的朋友吗？<br/>
-               你希望真正得到公平对待吗？你希望完成自己的想法愿望吗？</p>
-            <a href="#" class="button">开始</a>
-        </div>
-
-        <!-- 图像展示 -->
-        <div class="image-container">
-            <img src="img/minecraft_screenshot.jpg" alt="Minecraft 截图" style="max-width: 100%; height: auto;">
-        </div>
-
-        <!-- 社区特点说明 -->
-        <div class="section">
-            <h2>墟壤纪社区所带给你的！</h2>
-            <div class="cards">
-                <div class="card">
-                    <p>墟壤纪虽不大但温馨的社区<br/>
-                       别让情绪支配自己哦，做到和和好友爱QQWQ。</p>
-                </div>
-                <div class="card">
-                    <p>真正原版的我的世界<br/>
-                       墟壤纪社区的创建者十分喜欢玩纯原版，因此而得名。</p>
-                </div>
-                <div class="card">
-                    <p>一些特别的玩法服务器<br/>
-                       总有人不爱玩原版嘛，那就来玩玩法QQWQ</p>
+        <!-- 主要内容区域 -->
+        <main id="main-content">
+            <!-- 社区特点说明 -->
+            <div class="section">
+                <h2>墟壤纪社区所带给你的！</h2>
+                <div class="cards">
+                    <div class="card">
+                        <img class="card-image" style="max-width:100%;overflow:hidden;" src="resources\\img\\-1.png" alt="">
+                        <p>墟壤纪虽不大但温馨的社区<br/>
+                           <strong style="color: #333333">别让情绪支配自己哦，做到和和好友爱QWQ</strong></p>
+                    </div>
+                    <div class="card">
+                        <img class="card-image" style="max-width:100%;overflow:hidden;" src="resources\\img\\-2.jpg" alt="">
+                        <p>真正原版的我的世界<br/>
+                           <strong style="color: #333333">墟壤纪社区的创建者十分喜欢玩纯原版，因此而得名</strong></p>
+                    </div>
+                    <div class="card">
+                        <img class="card-image" style="max-width:100%;overflow:hidden;" src="resources\\img\\-3.jpg" alt="">
+                        <p>一些特别的玩法服务器<br/>
+                           <strong style="color: #333333">总有人不爱玩原版嘛，那就来玩玩法QWQ</strong></p>
+                    </div>
                 </div>
             </div>
-        </div>
 
         <!-- 加入社区规则 -->
         <div class="section">
@@ -108,7 +118,7 @@
                 <div class="card">
                     <p>“你是说？全成就？哦~傻孩子，我早完成了”</p>
                     <div class="user-info">
-                        <img src="https://via.placeholder.com/50" alt="用户头像">
+                        <img src="1resources\\img\\head2.jpg" alt="用户头像">
                         <div>
                             <p class="user-name">Eternity</p>
                             <p class="user-date">31.21</p>
@@ -135,11 +145,112 @@
             <a href="#" style="background-color: #ededed; color: #333; border: 1px solid #ddd; padding: 10px 20px; border-radius: 5px; text-decoration: none;">联系我的世界墟壤纪高级成员</a>
         </div>
 
+
+        </main>
+        
         <!-- 底部导航 -->
         <div class="footer">
             <p>MCR/MC - 墟壤纪</p>
         </div>
     </div>
-    <script src="script.js"></script>
+    
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 获取元素
+        const startButton = document.querySelector('.start-button');
+        const scrollDown = document.querySelector('.scroll-down');
+        const header = document.querySelector('.header');
+        const mainContent = document.querySelector('#main-content');
+        const headerHeight = header.offsetHeight;
+        
+        // 平滑滚动函数
+        function smoothScrollTo(target) {
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+            const startPosition = window.pageYOffset;
+            const distance = targetPosition - startPosition;
+            const duration = 1000; // 1秒滚动时间
+            let startTime = null;
+            
+            function animation(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+                window.scrollTo(0, run);
+                if (timeElapsed < duration) requestAnimationFrame(animation);
+            }
+            
+            // 缓动函数 - 平滑的加速减速效果
+            function easeInOutQuad(t, b, c, d) {
+                t /= d/2;
+                if (t < 1) return c/2*t*t + b;
+                t--;
+                return -c/2 * (t*(t-2) - 1) + b;
+            }
+            
+            requestAnimationFrame(animation);
+        }
+        
+        // 点击"开始"按钮跳转
+        if (startButton) {
+            startButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                smoothScrollTo(mainContent);
+            });
+        }
+        
+        // 点击向下箭头
+        if (scrollDown) {
+            scrollDown.addEventListener('click', function() {
+                smoothScrollTo(mainContent);
+            });
+        }
+        
+        // 检测鼠标滚轮和触摸滑动
+        let startY = null;
+        let isScrolling = false;
+        
+        // 鼠标滚轮事件
+        window.addEventListener('wheel', function(e) {
+            if (isScrolling) return;
+            
+            // 只有在header区域且向下滚动时才触发
+            if (window.scrollY < headerHeight && e.deltaY > 0) {
+                e.preventDefault();
+                isScrolling = true;
+                smoothScrollTo(mainContent);
+                
+                // 防止连续触发
+                setTimeout(() => {
+                    isScrolling = false;
+                }, 1000);
+            }
+        }, { passive: false });
+        
+        // 触摸事件
+        window.addEventListener('touchstart', function(e) {
+            if (window.scrollY < headerHeight) {
+                startY = e.touches[0].clientY;
+            }
+        }, { passive: true });
+        
+        window.addEventListener('touchmove', function(e) {
+            if (startY === null || isScrolling) return;
+            
+            const currentY = e.touches[0].clientY;
+            const diffY = startY - currentY;
+            
+            // 向下滑动超过50px时跳转
+            if (diffY > 50) {
+                isScrolling = true;
+                smoothScrollTo(mainContent);
+                startY = null;
+                
+                setTimeout(() => {
+                    isScrolling = false;
+                }, 1000);
+            }
+        }, { passive: true });
+    });
+</script>
 </body>
 </html>
