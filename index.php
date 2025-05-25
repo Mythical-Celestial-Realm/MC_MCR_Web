@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MCR/MC - 墟壤纪</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="components.css">
 </head>
 <body>
     <div class="container">
@@ -15,25 +16,20 @@
             <div class="nav">
                 <div style="font-size: 24px;">MCR/MC - 墟壤纪</div>
                 <div class="links">
-                    <a href="#">主页</a>
-                    <a href="#">服务器</a>
-                    <a href="#">关于</a>
-                    <a href="#" class="button">HELP</a>
+                    <a href="/">主页</a>
+                    <a href="/server.html">服务器</a>
+                    <a href="/about.html">关于</a>
+                    <a href="/help.html" class="button">帮助</a>
                 </div>
             </div>
 
             <!-- 主标题和介绍 -->
             <div class="header-content">
                 <div class="section">
-                    <h2>你……玩我的世界吗？</h2>
+                    <h3>你……玩我的世界吗？</h3>
                     <p>你希望找一个和谐的集体吗？你希望找一个陪你玩的朋友吗？<br/>
                       你希望真正得到公平对待吗？你希望完成自己的想法愿望吗？</p>
                     <a href="#main-content" class="button start-button">开始</a>
-                </div>
-                
-                <!-- 向下箭头提示 -->
-                <div class="scroll-down">
-                    <span class="arrow-down"></span>
                 </div>
             </div>
         </div>
@@ -63,8 +59,8 @@
             </div>
 
         <!-- 加入社区规则 -->
-        <div class="section">
-            <h2>如何加入我的世界墟壤纪社区</h2>
+        <div class="section" style="margin-top: 100px;">
+            <h2 style="width: 650px">如何加入我的世界墟壤纪社区</h2>
             <div class="join-container">
                 <div class="left">
                     <p><strong>一：做真正的自己</strong><br/>
@@ -75,10 +71,11 @@
                     <p><strong>三：成为一个会创造和谐友爱的成员</strong><br/>
                        在社区之中，互相帮助就是服务器和成员的发展之根本。帮助他人 = 帮助自己。<br/>
                        身在墟壤纪，那就是废土上同身份的朋友！</p>
-                </div>
-                <div class="right">
                     <a href="#" class="button">加入</a>
                     <a href="#" style="background-color: #ededed; color: #333; border: 1px solid #ddd; padding: 10px 20px; border-radius: 5px; text-decoration: none;">了解详细规则</a>
+                </div>
+                <div class="right">
+                    <img class="card-image" style="width:50%;height:50%;" src="resources/img/join_img.jpg" alt="加入我的世界墟壤纪社区">
                 </div>
             </div>
         </div>
@@ -154,53 +151,82 @@
         </div>
     </div>
     
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // 获取元素
-        const startButton = document.querySelector('.start-button');
-        const scrollDown = document.querySelector('.scroll-down');
-        const header = document.querySelector('.header');
-        const mainContent = document.querySelector('#main-content');
-        const headerHeight = header.offsetHeight;
-        
+        // 滚动控制对象
+        const scrollControl = {
+            isAnimating: false,
+            touchStartY: 0,
+            mo: function(e) { e.preventDefault(); },  // 提取匿名函数为对象的属性
+
+            // 完全禁用滚动
+            lockScroll: function() {
+                document.body.style.overflow = 'hidden';
+                document.addEventListener('touchmove', scrollControl.mo, { passive: false });
+                document.addEventListener('wheel', scrollControl.mo, { passive: false });
+            },
+
+            // 恢复滚动
+            unlockScroll: function() {
+                document.body.style.overflow = '';
+                document.removeEventListener('touchmove', scrollControl.mo, { passive: false });
+                document.removeEventListener('wheel', scrollControl.mo, { passive: false });
+            }
+        };
+
         // 平滑滚动函数
         function smoothScrollTo(target) {
-            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-            const startPosition = window.pageYOffset;
-            const distance = targetPosition - startPosition;
-            const duration = 1000; // 1秒滚动时间
+            if (scrollControl.isAnimating) return;
+
+            scrollControl.isAnimating = true;
+            scrollControl.lockScroll();
+
+            const startPos = window.pageYOffset;
+            const targetPos = 688;
+
+            const distance = targetPos - startPos;
+            const duration = 700;  // 移动持续时间
             let startTime = null;
-            
-            function animation(currentTime) {
-                if (startTime === null) startTime = currentTime;
-                const timeElapsed = currentTime - startTime;
-                const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
-                window.scrollTo(0, run);
-                if (timeElapsed < duration) requestAnimationFrame(animation);
-            }
-            
-            // 缓动函数 - 平滑的加速减速效果
-            function easeInOutQuad(t, b, c, d) {
-                t /= d/2;
-                if (t < 1) return c/2*t*t + b;
-                t--;
-                return -c/2 * (t*(t-2) - 1) + b;
-            }
-            
+
+            const animation = (currentTime) => {
+                if (!startTime) startTime = currentTime;
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+
+                window.scrollTo(0, startPos + distance * easeOutQuad(progress));
+
+                if (progress < 1) {
+                    requestAnimationFrame(animation);
+                } else {
+                    scrollControl.unlockScroll();  // 动画完成后解除禁用
+                    scrollControl.isAnimating = false;
+                }
+            };
+
             requestAnimationFrame(animation);
         }
-        
-        // 点击"开始"按钮跳转
-        if (startButton) {
-            startButton.addEventListener('click', function(e) {
+
+        // 缓动函数
+        function easeOutQuad(t) {
+            return t * (2 - t);
+        }
+
+        // 初始化元素
+        const startButton = document.querySelector('.start-button');
+        const scrollDown = document.querySelector('.scroll-down');
+        const mainContent = document.querySelector('#main-content');
+
+        // 事件绑定
+        if (startButton && mainContent) {
+            startButton.addEventListener('click', (e) => {
                 e.preventDefault();
                 smoothScrollTo(mainContent);
             });
         }
-        
-        // 点击向下箭头
-        if (scrollDown) {
-            scrollDown.addEventListener('click', function() {
+
+        if (scrollDown && mainContent) {
+            scrollDown.addEventListener('click', () => {
                 smoothScrollTo(mainContent);
             });
         }
@@ -214,7 +240,7 @@
             if (isScrolling) return;
             
             // 只有在header区域且向下滚动时才触发
-            if (window.scrollY < headerHeight && e.deltaY > 0) {
+            if (window.scrollY < 688 && e.deltaY > 0) {
                 e.preventDefault();
                 isScrolling = true;
                 smoothScrollTo(mainContent);
@@ -225,32 +251,9 @@
                 }, 1000);
             }
         }, { passive: false });
-        
-        // 触摸事件
-        window.addEventListener('touchstart', function(e) {
-            if (window.scrollY < headerHeight) {
-                startY = e.touches[0].clientY;
-            }
-        }, { passive: true });
-        
-        window.addEventListener('touchmove', function(e) {
-            if (startY === null || isScrolling) return;
-            
-            const currentY = e.touches[0].clientY;
-            const diffY = startY - currentY;
-            
-            // 向下滑动超过50px时跳转
-            if (diffY > 50) {
-                isScrolling = true;
-                smoothScrollTo(mainContent);
-                startY = null;
-                
-                setTimeout(() => {
-                    isScrolling = false;
-                }, 1000);
-            }
-        }, { passive: true });
     });
+
 </script>
+
 </body>
 </html>
