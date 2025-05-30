@@ -20,20 +20,6 @@ body::-webkit-scrollbar {
     padding: 0;
 }
 
-.header::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; /* 修改为相对于.header的宽度 */
-    height: 100%;
-    background-image: url("resources/img/background.jpg");
-    background-repeat: no-repeat; /* 背景图片不重复 */
-    background-size: cover; /* 使背景图片覆盖整个.header */
-    background-position: center center;
-    z-index: -1;
-}
-
 .header-content {
     position: relative;
     height: 100%;
@@ -100,7 +86,7 @@ body::-webkit-scrollbar {
 }
 
 .section {
-    margin-top: 50px;
+    margin-top: 70px;
     margin-bottom: 40px;
     padding-left: 80px;
     padding-right: 80px;
@@ -137,8 +123,6 @@ body::-webkit-scrollbar {
     height: 480px; /* 固定高度，可根据需要调整 */
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     background: white; /* 整体背景色 */
 }
 
@@ -147,25 +131,14 @@ body::-webkit-scrollbar {
     width: 100%;
     aspect-ratio: 1; /* 关键属性：强制1:1正方形 */
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     flex-shrink: 0; /* 防止图片区域被压缩 */
 }
 
-/* 文本容器 - 自动填充剩余空间 */
-.card-content {
-    flex: 1; /* 占据剩余空间 */
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* 文字垂直居中 */
-}
-
 .card p {
-    margin-top: 10px;
+    margin-top: 15px;
     color: #000;
     font-size: 18px;
-    text-align: center;
+    text-align: left;
 }
 
 

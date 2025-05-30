@@ -5,20 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MCR/MC - 墟壤纪</title>
-    <link rel="stylesheet" href="base.css">
-    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="css\HOME_CSS\base.css">
+    <link rel="stylesheet" href="css\HOME_CSS\components.css">
+    <style>
+        /* 引入字体文件 */
+        @font-face {
+            font-family: "思源黑体";
+            font-display: swap; /* 字体加载策略: 优先使用本地缓存，如果本地缓存没有，则从网络下载 */
+            src: 
+                url("resources/font/SourceHanSansOLD-Light-2.otf"),
+                url("resources/font/SourceHanSansSC-Medium-2.otf"),
+                url("resources/font/SourceHanSansSC-Normal-2.otf");
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <!-- 全屏头部区域 -->
-        <div class="header">
+        <div class="header" style="background-image: url('resources/img/background.jpg'); background-size: cover;">
             <!-- 顶部导航栏 -->
             <div class="nav">
                 <div style="font-size: 24px;">MCR/MC - 墟壤纪</div>
                 <div class="links">
                     <a href="/">主页</a>
-                    <a href="/server.html">服务器</a>
-                    <a href="/about.html">关于</a>
+                    <a href="/server.php">服务器</a>
+                    <a href="/about.php">关于</a>
                     <a href="/help.html" class="button">帮助</a>
                 </div>
             </div>
@@ -43,26 +54,26 @@
                     <div class="card">
                         <img class="card-image" style="max-width:100%;overflow:hidden;" src="resources\\img\\-1.png" alt="">
                         <p>墟壤纪虽不大但温馨的社区<br/>
-                           <strong style="color: #333333">别让情绪支配自己哦，做到和和好友爱QWQ</strong></p>
+                           <strong style="color: #999">别让情绪支配自己哦，做到和谐友爱</strong></p>
                     </div>
                     <div class="card">
                         <img class="card-image" style="max-width:100%;overflow:hidden;" src="resources\\img\\-2.jpg" alt="">
                         <p>真正原版的我的世界<br/>
-                           <strong style="color: #333333">墟壤纪社区的创建者十分喜欢玩纯原版，因此而得名</strong></p>
+                           <strong style="color: #999">墟壤纪社区的创建者十分喜欢玩纯原版，因此而得名</strong></p>
                     </div>
                     <div class="card">
                         <img class="card-image" style="max-width:100%;overflow:hidden;" src="resources\\img\\-3.jpg" alt="">
                         <p>一些特别的玩法服务器<br/>
-                           <strong style="color: #333333">总有人不爱玩原版嘛，那就来玩玩法QWQ</strong></p>
+                           <strong style="color: #999">总有人不爱玩原版嘛，那就来玩玩法</strong></p>
                     </div>
                 </div>
             </div>
 
         <!-- 加入社区规则 -->
-        <div class="section" style="margin-top: 100px;">
-            <h2 style="width: 650px">如何加入我的世界墟壤纪社区</h2>
+        <div class="section" style="margin-top: 150px;">
             <div class="join-container">
                 <div class="left">
+                    <h2 style="margin-bottom: 30px;">如何加入我的世界墟壤纪社区</h2>
                     <p><strong>一：做真正的自己</strong><br/>
                        减少伪装和掩饰，追求自己真正想要的。</p>
                     <p><strong>二：不影响其他成员的正常玩耍的权力</strong><br/>
@@ -74,9 +85,7 @@
                     <a href="#" class="button">加入</a>
                     <a href="#" style="background-color: #ededed; color: #333; border: 1px solid #ddd; padding: 10px 20px; border-radius: 5px; text-decoration: none;">了解详细规则</a>
                 </div>
-                <div class="right">
-                    <img class="card-image" style="width:50%;height:50%;" src="resources/img/join_img.jpg" alt="加入我的世界墟壤纪社区">
-                </div>
+                <img class="card-image" style="width: 40%;" src="resources\img\join.jpg" alt="">
             </div>
         </div>
 
