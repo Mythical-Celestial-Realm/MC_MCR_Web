@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
+    background: #f5f5f5;
 }
 
 header {
@@ -13,77 +14,75 @@ header {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    z-index: 2;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 .logo {
-    font-size: 24px !important;
-    color: #fff !important;
+    font-size: 1.5rem;
+    color: #fff;
     font-weight: bold;
 }
 
 nav {
     display: flex;
-    gap: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 nav a {
-    color: #fff !important;
+    color: #fff;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 1rem;
     transition: opacity 0.3s;
+    padding: 8px 15px;
+    border-radius: 20px;
 }
 
 nav a:hover {
     opacity: 0.8;
 }
 
-.help-btn {
-    background: #000 !important;
-    color: #fff !important;
-    padding: 8px 20px !important;
-    border-radius: 20px;
+.button {
+    background: #000;
+    color: #fff;
 }
 
 .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    color: #fff;
+    color: white;
+    padding: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .overlay h1 {
-    font-size: 48px;
+    font-size: 2.5rem;
     margin: 0 0 20px;
-    color: #fff;
 }
 
 .overlay p {
-    font-size: 20px;
+    font-size: 1.2rem;
     margin: 0;
     opacity: 0.9;
 }
 
-/* 服务器列表 */
 .server-list {
-    padding: 80px 5%;
+    padding: 50px 5%;
     display: grid;
-    gap: 40px;
+    gap: 30px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .server-card {
     background: #fff;
     border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s;
 }
 
@@ -93,14 +92,14 @@ nav a:hover {
 
 .server-card h3 {
     color: #000;
-    font-size: 24px;
+    font-size: 1.5rem;
     margin: 0 0 15px;
 }
 
 .server-card p {
     color: #666;
-    font-size: 16px;
-    line-height: 1.8;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 .buttons {
@@ -111,10 +110,10 @@ nav a:hover {
 }
 
 button {
-    padding: 10px 30px !important;
-    border: none !important;
-    border-radius: 30px !important;
-    font-size: 16px !important;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s;
 }
@@ -129,91 +128,91 @@ button {
     color: #333;
 }
 
-/* 服务器内容 */
 .server-content {
-    padding: 80px 5%;
+    padding: 50px 5%;
 }
 
 .server-content h2 {
-    font-size: 36px;
+    font-size: 2rem;
     color: #000;
     text-align: center;
-    margin: 0 0 50px;
+    margin: 0 0 40px;
 }
 
 .server-carousel {
     display: grid;
-    gap: 30px;
+    gap: 25px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.server-image {
-    height: 300px;
+.server-item {
+    background: #fff;
     border-radius: 12px;
     overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.server-image img {
+.server-item img {
     width: 100%;
-    height: 100%;
+    height: 200px;
     object-fit: cover;
 }
 
 .server-details {
-    padding: 25px;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    padding: 20px;
 }
 
-/* 规则部分 */
+.server-details h3 {
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+}
+
 .server-rules {
-    padding: 80px 5%;
+    padding: 50px 5%;
 }
 
 .server-rules h2 {
-    font-size: 36px;
+    font-size: 2rem;
     text-align: center;
-    margin: 0 0 50px;
+    margin: 0 0 40px;
 }
 
 .rule-item {
     display: flex;
     align-items: start;
-    gap: 25px;
-    padding: 30px;
+    gap: 20px;
+    padding: 25px;
     background: #fff;
     border-radius: 12px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 .icon {
-    font-size: 32px;
-    flex-shrink: 0;
+    font-size: 2rem;
 }
 
 .rule-content h3 {
-    margin: 0 0 15px;
-    font-size: 24px;
+    margin: 0 0 12px;
+    font-size: 1.3rem;
     color: #000;
 }
 
-/* 响应式设计 */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+}
+
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-    
-    .server-list {
-        grid-template-columns: 1fr;
-    }
-    
     .rule-item {
         flex-direction: column;
         align-items: center;
         text-align: center;
+    }
+    
+    .server-carousel {
+        grid-template-columns: 1fr;
     }
 }

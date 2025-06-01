@@ -4,16 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>服务器列表</title>
-    <link rel="stylesheet" href="css\SERVER_CSS\style.css">
+    <link rel="stylesheet" href="css/SERVER_CSS/style.css">
     <style>
-        /* 引入思源黑体 */
         @font-face {
             font-family: "思源黑体";
             font-display: swap;
-            src: 
-                url("../resources/font/SourceHanSansOLD-Light-2.otf"),
-                url("../resources/font/SourceHanSansSC-Medium-2.otf"),
-                url("../resources/font/SourceHanSansSC-Normal-2.otf");
+            src: url("resources/font/SourceHanSansSC-Normal-2.otf");
         }
     </style>
 </head>
@@ -21,10 +17,10 @@
     <header style="background-image: url('resources/img/background_server.jpg'); background-size: cover;">
         <div class="logo">MCR:MC-墟壤纪</div>
         <nav>
-            <a href="#">主页</a>
-            <a href="#">服务器</a>
-            <a href="#">关于</a>
-            <a href="#" class="help-btn">HELP</a>
+            <a href="index.php">主页</a>
+            <a href="server.php">服务器</a>
+            <a href="about.php">关于</a>
+            <a href="help.html" class="button">HELP</a>
         </nav>
         <div class="overlay">
             <h1>服务器列表</h1>
@@ -57,29 +53,26 @@
     <section class="server-content">
         <h2>服务器内容大致展示</h2>
         <div class="server-carousel">
-            <div class="server-image">
+            <div class="server-item">
                 <img src="https://via.placeholder.com/500x300" alt="服务器特色图片">
+                <div class="server-details">
+                    <h3>1.21.4 服务器——和谐友爱的大家</h3>
+                    <p>Description of featured product</p>
+                </div>
             </div>
-            <div class="server-details">
-                <h3>1.21.4 服务器——和谐友爱的大家</h3>
-                <p>Description of featured product</p>
-                <strong>$10.99</strong>
-            </div>
-            <div class="server-image">
+            <div class="server-item">
                 <img src="https://via.placeholder.com/500x300" alt="服务器特色图片">
+                <div class="server-details">
+                    <h3>1.20.1 匠魂枪械玩法服务器——我这枪太 OK 了</h3>
+                    <p>Description of top product</p>
+                </div>
             </div>
-            <div class="server-details">
-                <h3>1.20.1 匠魂枪械玩法服务器——我这枪太 OK 了</h3>
-                <p>Description of top product</p>
-                <strong>$10.99</strong>
-            </div>
-            <div class="server-image">
+            <div class="server-item">
                 <img src="https://via.placeholder.com/500x300" alt="服务器特色图片">
-            </div>
-            <div class="server-details">
-                <h3>1.21.4 服务器——龙蛋被藏在腐竹家里了</h3>
-                <p>Description of lower product</p>
-                <strong>$10.99</strong>
+                <div class="server-details">
+                    <h3>1.21.4 服务器——龙蛋被藏在腐竹家里了</h3>
+                    <p>Description of lower product</p>
+                </div>
             </div>
         </div>
     </section>
