@@ -1,5 +1,4 @@
 body {
-    font-family: '思源黑体', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -11,33 +10,32 @@ header {
     background: rgba(0,0,0,0.8);
     padding: 20px 5%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-start;
     position: relative;
     background-size: cover;
     background-position: center;
-    min-height: 100vh;
+    min-height: 50vh;
     flex-direction: column;
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 24px;
     color: #fff;
-    font-weight: bold;
 }
 
 nav {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    justify-content: center;
-    margin-top: 20px;
+    justify-content: flex-end;
+    margin-top: -35px;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
     font-size: 1rem;
+    font-weight: bold;
     transition: opacity 0.3s;
     padding: 8px 15px;
     border-radius: 20px;
@@ -56,7 +54,7 @@ nav a:hover {
     text-align: center;
     color: white;
     padding: 20px;
-    margin-top: auto;
+    margin-top: 80px;
     margin-bottom: auto;
 }
 
@@ -104,9 +102,7 @@ nav a:hover {
 
 .buttons {
     margin-top: 25px;
-    display: flex;
     gap: 15px;
-    justify-content: center;
 }
 
 button {
@@ -130,12 +126,12 @@ button {
 
 .server-content {
     padding: 50px 5%;
+    padding-top: 95px;
 }
 
 .server-content h2 {
     font-size: 2rem;
     color: #000;
-    text-align: center;
     margin: 0 0 40px;
 }
 
@@ -154,7 +150,7 @@ button {
 
 .server-item img {
     width: 100%;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
 }
 
@@ -173,7 +169,6 @@ button {
 
 .server-rules h2 {
     font-size: 2rem;
-    text-align: center;
     margin: 0 0 40px;
 }
 
