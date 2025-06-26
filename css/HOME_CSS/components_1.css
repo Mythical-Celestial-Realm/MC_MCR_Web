@@ -109,7 +109,7 @@ body::-webkit-scrollbar {
     height: auto;
     flex: 1;
     min-width: 300px;
-    max-width: 400px;
+    max-width: calc(33% - 18px)px;
     background: white;
     border-radius: 8px;
     overflow: hidden;

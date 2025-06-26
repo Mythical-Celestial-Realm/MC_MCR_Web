@@ -1,0 +1,8 @@
+为了使css编辑更加顺利流畅，一个更合理的css仓库就很有必要了。
+取名结构：网页名称+板块名称_模块名称.css
+例如:一个home网页分为5板块，在第二板块有两个模块，分别是导航模块和内容模块，那么css文件的命名就是：
+
+形成分支结构
+home
+    b2_navigation-module.css
+    b2_content-module.css

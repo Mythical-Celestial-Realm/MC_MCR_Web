@@ -5,7 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MCR/MC - 墟壤纪</title>
-    <link rel="stylesheet" href="css/HOME_CSS/components.css">
+
+    <link rel="stylesheet" href="css/index/b1_Navigation-Bar.css">
+    <link rel="stylesheet" href="css/index/b2_Community-Served.css">
+    <link rel="stylesheet" href="css/index/b3_Join-The-Community.css">
+    <link rel="stylesheet" href="css/index/b4_Introduction-to-ServerDetails.css">
+    <link rel="stylesheet" href="css/index/b5_Community-Comments.css">
+    <link rel="stylesheet" href="css/index/b6_Contact.css">
+
+
     <style>
         @font-face {
             font-family: "思源黑体";
@@ -16,9 +24,15 @@
                 url("resources/font/SourceHanSansSC-Normal-2.otf");
         }
     </style>
+    <script src="js/main.js" defer></script>
 </head>
 <body>
+
+
     <div class="container">
+
+        <!--b1-->
+
         <div class="header" style="background-image: url('resources/img/background.jpg');">
             <div class="nav">
                 <div>MCR/MC - 墟壤纪</div>
@@ -29,7 +43,7 @@
                     <a href="help.html" class="button">帮助</a>
                 </div>
             </div>
-
+            
             <div class="header-content">
                 <div class="section">
                     <h3 style="color: #fff;">你……玩我的世界吗？</h3>
@@ -39,7 +53,9 @@
                 </div>
             </div>
         </div>
-
+        
+        <!--b2-->
+        
         <main id="main-content">
             <div class="section">
                 <h2>墟壤纪社区所带给你的！</h2>
@@ -58,6 +74,8 @@
                     </div>
                 </div>
             </div>
+
+        <!--b3-->  
 
         <div class="section">
             <div class="join-container">
@@ -78,16 +96,19 @@
             </div>
         </div>
 
-        <div class="section">
+         <!-- 实验性结构阶段  -->
+        <!--b4-->
+
+        <div class="b4">  
             <h2>服务器大致信息</h2>
-            <div class="cards">
-                <div class="card">
+            <div class="b4_cards">
+                <div class="b4_card">
                     <img src="resources/img/Minecraft_TheGardenAwakens_DotNet_2058x1440.png" alt="1.21.4纯原版服务器">
                     <p><strong>1.21.4纯原版服务器</strong><br/>
                        不要作弊和开矿透阴awa被发现了，后果很严重。<br/>
                        这将一直开下去，励志成为一个伟大的服务器。</p>
                 </div>
-                <div class="card">
+                <div class="b4_card">
                     <img src="resources/img/tinkers_gun.png" alt="匠魂枪械服务器">
                     <p><strong>以匠魂枪械为主玩法的1.20.1服务器</strong><br/>
                        哇，这即将是玩过最多人的玩法服务器呢。<br/>
@@ -96,6 +117,9 @@
                 </div>
             </div>
         </div>
+
+
+        <!--b5-->
 
         <div class="section">
             <h2>缴获成员的金句</h2>
@@ -133,6 +157,9 @@
             </div>
         </div>
 
+        
+        <!--b6-->
+        
         <div class="section">
             <h2>了解我的世界墟壤纪详细信息</h2>
             <a href="#" class="button">开始</a>
@@ -145,81 +172,5 @@
             <p>MCR/MC - 墟壤纪</p>
         </div>
     </div>
-    
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const scrollControl = {
-            isAnimating: false,
-
-            lockScroll: function() {
-                document.body.style.overflow = 'hidden';
-            },
-
-            unlockScroll: function() {
-                document.body.style.overflow = '';
-            }
-        };
-
-        function smoothScrollTo(target) {
-            if (scrollControl.isAnimating) return;
-
-            scrollControl.isAnimating = true;
-            scrollControl.lockScroll();
-
-            const startPos = window.pageYOffset;
-            const targetPos = 688;
-            const distance = targetPos - startPos;
-            const duration = 700;
-            let startTime = null;
-
-            const animation = (currentTime) => {
-                if (!startTime) startTime = currentTime;
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-
-                window.scrollTo(0, startPos + distance * (progress < 0.5 
-                    ? 4 * progress * progress * progress 
-                    : 1 - Math.pow(-2 * progress + 2, 3) / 2));
-
-                if (progress < 1) {
-                    requestAnimationFrame(animation);
-                } else {
-                    scrollControl.unlockScroll();
-                    scrollControl.isAnimating = false;
-                }
-            };
-
-            requestAnimationFrame(animation);
-        }
-
-        const startButton = document.querySelector('.start-button');
-        const mainContent = document.querySelector('#main-content');
-
-        if (startButton && mainContent) {
-            startButton.addEventListener('click', (e) => {
-                e.preventDefault();
-                smoothScrollTo(mainContent);
-            });
-        }
-        
-        let isScrolling = false;
-        
-        window.addEventListener('wheel', function(e) {
-            if (isScrolling) return;
-            
-            if (window.scrollY < 688 && e.deltaY > 0) {
-                e.preventDefault();
-                isScrolling = true;
-                smoothScrollTo(mainContent);
-                
-                setTimeout(() => {
-                    isScrolling = false;
-                }, 1000);
-            }
-        }, { passive: false });
-    });
-</script>
-
 </body>
 </html>
