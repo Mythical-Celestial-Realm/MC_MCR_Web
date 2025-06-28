@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MCR/MC - 墟壤纪</title>
 
+    <link rel="stylesheet" href="css/index/global.css">
     <link rel="stylesheet" href="css/index/b1_Navigation-Bar.css">
     <link rel="stylesheet" href="css/index/b2_Community-Served.css">
     <link rel="stylesheet" href="css/index/b3_Join-The-Community.css">

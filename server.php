@@ -9,7 +9,7 @@
         @font-face {
             font-family: "思源黑体";
             font-display: swap; /* 字体加载策略: 优先使用本地缓存，如果本地缓存没有，则从网络下载 */
-            src: 
+            src:
                 url("resources/font/SourceHanSansOLD-Light-2.otf"),
                 url("resources/font/SourceHanSansSC-Medium-2.otf"),
                 url("resources/font/SourceHanSansSC-Normal-2.otf");
