@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/SERVER_CSS/b3_Server-Details.css">
     <link rel="stylesheet" href="css/SERVER_CSS/b4_Server-Comments.css">
     <link rel="stylesheet" href="css/SERVER_CSS/b5_Server-Footer.css">
+    <link rel="stylesheet" href="css/SERVER_CSS/admin-login.css">
     <style>
         @font-face {
             font-family: "思源黑体";
@@ -22,6 +23,32 @@
     </style>
 </head>
 <body>
+    <!-- 登录提示和表单 -->
+    <div id="userTipBox" style="margin: 20px 0; text-align:center; color:#888; font-size:16px;">
+        普通用户无需登录，可直接浏览服务器信息。
+        <button id="hideTipBtn" style="margin-left:10px; font-size:14px;">不再显示</button>
+        <?php if (!isset($_SESSION['admin_user'])): ?>
+            <button class="admin-login-btn" id="showAdminLogin" style="margin-left:10px;">腐竹登录</button>
+        <?php endif; ?>
+        <?php if (isset($_SESSION['admin_user'])): ?>
+            <span style="margin-left:10px;">欢迎，<?php echo htmlspecialchars($_SESSION['admin_user']); ?>（腐竹）</span>
+            <a href="?logout=1" class="logout-btn">退出登录</a>
+        <?php endif; ?>
+    </div>
+    <script src="js/admin-login.js" defer></script>
+    <div id="adminLoginBox" class="admin-login-modal">
+        <form method="post" action="">
+            <h3>腐竹登录</h3>
+            <input type="text" name="username" placeholder="账号" required><br><br>
+            <input type="password" name="password" placeholder="密码" required><br><br>
+            <button type="submit" name="admin_login" class="admin-login-btn main">登录</button>
+            <button type="button" id="cancelAdminLogin" class="admin-login-btn cancel">取消</button>
+            <div style="color:red; margin-top:10px;"><?php echo $login_error; ?></div>
+        </form>
+    </div>
+    <script src="js/no-show.js" defer></script>
+
+
     <header style="background-image: url('resources/img/background_server.jpg'); background-size: cover;">
         <div class="logo">MCR:MC-墟壤纪</div>
         <nav>
@@ -140,5 +167,6 @@
     <footer>
         <p>Copyright © 2021 MCR:MC-墟壤纪. All rights reserved.</p>
     </footer>
+    <script src="js/admin-login.js" defer></script>
 </body>
 </html>
