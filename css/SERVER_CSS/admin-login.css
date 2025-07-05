@@ -108,3 +108,38 @@
 .admin-login-modal.plum-blossom .admin-login-btn:hover {
     background: linear-gradient(90deg, #b45fa5 0%, #e0b7d7 100%);
 }
+/* 用户提示区美化 */
+.user-tip-box {
+    margin: 20px 0;
+    text-align: center;
+    color: #888;
+    font-size: 16px;
+    background: #f8faff;
+    border-radius: 8px;
+    padding: 12px 0 10px 0;
+    box-shadow: 0 2px 8px rgba(78,154,241,0.04);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.hide-tip-btn {
+    margin-left: 10px;
+    font-size: 14px;
+    background: #eee;
+    color: #666;
+    border: none;
+    border-radius: 5px;
+    padding: 3px 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.hide-tip-btn:hover {
+    background: #e0e0e0;
+}
+.admin-welcome {
+    margin-left: 10px;
+    color: #4e9af1;
+    font-weight: 500;
+}

@@ -1,5 +1,4 @@
 <?php
-session_start();
 // 预设账号密码
 $admins = [
     'Chen' => 'aa011211',
@@ -15,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: server.php');
         exit;
     } else {
-        $error = '账号或密码错误';
+        $login_error = '账号或密码错误';
     }
 }
 

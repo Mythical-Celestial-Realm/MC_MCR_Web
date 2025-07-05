@@ -1,3 +1,7 @@
+<?php
+session_start();
+include_once 'login.php';
+?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -24,14 +28,14 @@
 </head>
 <body>
     <!-- 登录提示和表单 -->
-    <div id="userTipBox" style="margin: 20px 0; text-align:center; color:#888; font-size:16px;">
-        普通用户无需登录，可直接浏览服务器信息。
-        <button id="hideTipBtn" style="margin-left:10px; font-size:14px;">不再显示</button>
+    <div id="userTipBox" class="user-tip-box">
+        <span class="user-tip-text">普通用户无需登录，可直接浏览服务器信息。</span>
+        <button id="hideTipBtn" class="hide-tip-btn">不再显示</button>
         <?php if (!isset($_SESSION['admin_user'])): ?>
-            <button class="admin-login-btn" id="showAdminLogin" style="margin-left:10px;">腐竹登录</button>
+            <button class="admin-login-btn" id="showAdminLogin">腐竹登录</button>
         <?php endif; ?>
         <?php if (isset($_SESSION['admin_user'])): ?>
-            <span style="margin-left:10px;">欢迎，<?php echo htmlspecialchars($_SESSION['admin_user']); ?>（腐竹）</span>
+            <span class="admin-welcome">欢迎，<?php echo htmlspecialchars($_SESSION['admin_user']); ?>（腐竹）</span>
             <a href="?logout=1" class="logout-btn">退出登录</a>
         <?php endif; ?>
     </div>
@@ -43,7 +47,7 @@
             <input type="password" name="password" placeholder="密码" required><br><br>
             <button type="submit" name="admin_login" class="admin-login-btn main">登录</button>
             <button type="button" id="cancelAdminLogin" class="admin-login-btn cancel">取消</button>
-            <div style="color:red; margin-top:10px;"><?php echo $login_error; ?></div>
+            <div class="login-error-msg"><?php echo $login_error; ?></div>
         </form>
     </div>
     <script src="js/no-show.js" defer></script>
