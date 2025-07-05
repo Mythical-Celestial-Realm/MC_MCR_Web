@@ -1,0 +1,21 @@
+/* 服务器页脚样式 */
+footer {
+    background: #222;
+    color: #fff;
+    padding: 1px;
+    text-align: center;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    color: #aaa;
+    font-size: 0.9rem;
+}

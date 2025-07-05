@@ -1,0 +1,62 @@
+/* 服务器导航样式 */
+header {
+    background: rgba(0,0,0,0.8);
+    padding: 20px 5%;
+    position: relative;
+    min-height: 50vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 24px;
+    color: #fff;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: flex-end;
+    margin-top: -35px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: opacity 0.3s;
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+nav a:hover {
+    opacity: 0.8;
+}
+
+.button {
+    background: #000;
+    color: #fff;
+}
+
+.overlay {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin-top: 80px;
+    margin-bottom: auto;
+}
+
+.overlay h1 {
+    font-size: 2.5rem;
+    margin: 0 0 20px;
+}
+
+.overlay p {
+    font-size: 1.2rem;
+    margin: 0;
+    opacity: 0.9;
+}

@@ -1,0 +1,34 @@
+/* 服务器规则样式 */
+.server-rules {
+    display: grid; /* 使用网格布局 */
+    grid-template-columns: repeat(2, 1fr); /* 定义两列 */
+    gap: 20px; /* 定义网格项之间的间距 */
+    padding: 50px 5%;
+}
+
+.server-rules h2 {
+    font-size: 2rem;
+    margin: 0 0 40px;
+    
+}
+
+.rule-item {
+    padding: 25px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.icon {
+    font-size: 2rem;
+}
+
+.rule-content {
+    color: #555;
+}
+
+.rule-content h3 {
+    margin: 0 0 12px;
+    font-size: 1.3rem;
+    color: #000;
+}
