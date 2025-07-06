@@ -1,55 +1,62 @@
 /* 服务器详情样式 */
 .left {
-    width: 50%;
-    height: 100%;  /* 固定高度100% */
-    padding-right: 20px;
+    width: 36.9vw;
+    height: 100%;
+    padding-right: 1.46vw;
 }
 
 .right {
-    width: 50%;
+    width: auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    height: 100%;  /* 总高度与左边一致 */
-
+    gap: 1.46vw;
+    height: 100%;
 }
 
 .server-carousel {
     display: flex;
-    margin: 0 5%;
-    height: 100%;  /* 容器高度 */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 .server-item {
     background: #fff;
-    border-radius: 12px;
+    border-radius: 0.88vw; /* 12/1366 ≈ 0.88vw */
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    height: 100%;  /* 左边项目高度100% */
+    height: 100%;
 }
 
 .right .server-item {
     height: 100%;  
-
 }
 
 .server-item img {
     width: 100%;
-    height: calc(100% - 60px);  /* 图片高度减去文字区域 */
+    height: 35vw;
     object-fit: cover;
 }
 
 .server-details {
-    padding: 20px;
+    padding: 1.46vw;
 }
 
 .server-details h3 {
-    margin: 0 0 10px;
+    margin: 0 0 0.73vw;
     font-size: 1.2rem;
 }
 
 .server-content h2 {
     font-size: 2rem;
     color: #000;
-    margin: 0 0 40px 5%;  /* 添加左侧5%边距 */
+    margin: 0 0 2.93vw 5%;
+}
+
+.server-item img[src*="wallpaper_minecraft_winter_celebration_2048x2048.png"] {
+    height: 36vw;
+}
+
+.server-item img[src*="tacz_img1.png"],
+.server-item img[src*="Fhome.jpg"] {
+    height: 13vw;
 }
