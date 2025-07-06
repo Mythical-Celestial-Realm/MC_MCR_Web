@@ -1,0 +1,145 @@
+.admin-login-bar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.admin-login-btn {
+    background: linear-gradient(90deg, #4e9af1 0%, #6ed0f6 100%);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 18px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(78,154,241,0.08);
+}
+.admin-login-btn.main {
+    background: linear-gradient(90deg, #4e9af1 0%, #6ed0f6 100%);
+}
+.admin-login-btn.cancel {
+    background: #eee;
+    color: #333;
+}
+.admin-login-btn:hover {
+    background: linear-gradient(90deg, #3578c6 0%, #4ec6e6 100%);
+}
+.logout-btn {
+    color: #f00;
+    text-decoration: underline;
+    margin-left: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.admin-login-modal {
+    display: none;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 30px 32px 20px 32px;
+    z-index: 1000;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    min-width: 260px;
+}
+.admin-login-modal h3 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    color: #4e9af1;
+    font-size: 20px;
+    text-align: center;
+}
+.admin-login-modal input[type="text"],
+.admin-login-modal input[type="password"] {
+    width: 90%;
+    padding: 7px 10px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+.admin-login-modal.plum-blossom {
+    background: #fff8fc;
+    border: 2px solid #e0b7d7;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(180, 120, 180, 0.18);
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    min-width: 260px;
+    padding: 32px 36px 22px 36px;
+    background-image: url('../../resources/img/plum_blossom.png'); /* 可自定义梅花装饰图 */
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 80px auto;
+    animation: blossomFadeIn 0.5s;
+}
+@keyframes blossomFadeIn {
+    from { opacity: 0; transform: translate(-50%, -60%); }
+    to   { opacity: 1; transform: translate(-50%, -50%); }
+}
+.admin-login-modal.plum-blossom h3 {
+    color: #b45fa5;
+    font-family: '思源黑体', 'Microsoft YaHei', sans-serif;
+    letter-spacing: 2px;
+}
+.admin-login-modal.plum-blossom input[type="text"],
+.admin-login-modal.plum-blossom input[type="password"] {
+    border: 1.5px solid #e0b7d7;
+    background: #fff;
+}
+.admin-login-modal.plum-blossom .admin-login-btn.main {
+    background: linear-gradient(90deg, #e0b7d7 0%, #b45fa5 100%);
+}
+.admin-login-modal.plum-blossom .admin-login-btn.cancel {
+    background: #f3e6f1;
+    color: #b45fa5;
+}
+.admin-login-modal.plum-blossom .admin-login-btn:hover {
+    background: linear-gradient(90deg, #b45fa5 0%, #e0b7d7 100%);
+}
+/* 用户提示区美化 */
+.user-tip-box {
+    margin: 20px 0;
+    text-align: center;
+    color: #888;
+    font-size: 16px;
+    background: #f8faff;
+    border-radius: 8px;
+    padding: 12px 0 10px 0;
+    box-shadow: 0 2px 8px rgba(78,154,241,0.04);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.hide-tip-btn {
+    margin-left: 10px;
+    font-size: 14px;
+    background: #eee;
+    color: #666;
+    border: none;
+    border-radius: 5px;
+    padding: 3px 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.hide-tip-btn:hover {
+    background: #e0e0e0;
+}
+.admin-welcome {
+    margin-left: 10px;
+    color: #4e9af1;
+    font-weight: 500;
+}

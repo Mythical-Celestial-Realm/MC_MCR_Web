@@ -1,10 +1,20 @@
+<?php
+session_start();
+include_once 'login.php';
+?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>服务器列表</title>
-    <link rel="stylesheet" href="css/SERVER_CSS/style.css">
+    <link rel="stylesheet" href="css/SERVER_CSS/global.css">
+    <link rel="stylesheet" href="css/SERVER_CSS/b1_Server-Navigation.css">
+    <link rel="stylesheet" href="css/SERVER_CSS/b2_Server-List.css">
+    <link rel="stylesheet" href="css/SERVER_CSS/b3_Server-Details.css">
+    <link rel="stylesheet" href="css/SERVER_CSS/b4_Server-Comments.css">
+    <link rel="stylesheet" href="css/SERVER_CSS/b5_Server-Footer.css">
+    <link rel="stylesheet" href="css/SERVER_CSS/admin-login.css">
     <style>
         @font-face {
             font-family: "思源黑体";
@@ -17,6 +27,32 @@
     </style>
 </head>
 <body>
+    <!-- 登录提示和表单 -->
+    <div id="userTipBox" class="user-tip-box">
+        <span class="user-tip-text">普通用户无需登录，可直接浏览服务器信息。</span>
+        <button id="hideTipBtn" class="hide-tip-btn">不再显示</button>
+        <?php if (!isset($_SESSION['admin_user'])): ?>
+            <button class="admin-login-btn" id="showAdminLogin">腐竹登录</button>
+        <?php endif; ?>
+        <?php if (isset($_SESSION['admin_user'])): ?>
+            <span class="admin-welcome">欢迎，<?php echo htmlspecialchars($_SESSION['admin_user']); ?>（腐竹）</span>
+            <a href="?logout=1" class="logout-btn">退出登录</a>
+        <?php endif; ?>
+    </div>
+    <script src="js/admin-login.js" defer></script>
+    <div id="adminLoginBox" class="admin-login-modal">
+        <form method="post" action="">
+            <h3>腐竹登录</h3>
+            <input type="text" name="username" placeholder="账号" required><br><br>
+            <input type="password" name="password" placeholder="密码" required><br><br>
+            <button type="submit" name="admin_login" class="admin-login-btn main">登录</button>
+            <button type="button" id="cancelAdminLogin" class="admin-login-btn cancel">取消</button>
+            <div class="login-error-msg"><?php echo $login_error; ?></div>
+        </form>
+    </div>
+    <script src="js/no-show.js" defer></script>
+
+
     <header style="background-image: url('resources/img/background_server.jpg'); background-size: cover;">
         <div class="logo">MCR:MC-墟壤纪</div>
         <nav>
@@ -33,48 +69,60 @@
 
     <section class="server-list">
         <div class="server-card">
-            <h3>1.21.4 纯原版服务器</h3>
-            <p>不要作弊和开矿挖哦awa<br>
-            被发现了，后果很严重。<br>
-            这将一直开下去，励志成为一个伟大的服务器。</p>
-            <div class="buttons">
-                <button class="details-btn">详细信息</button>
-                <button class="contact-btn">联系腐竹</button>
+            <div class="server-info">
+                <h3>1.21.4 纯原版服务器</h3>
+                <p>不要作弊和开矿透哦awa<br>
+                被发现了，后果很严重。<br>
+                这将一直开下去，励志成为一个伟大的服务器。</p>
+                <div class="buttons">
+                    <button class="details-btn">详细信息</button>
+                    <button class="contact-btn">联系腐竹</button>
+                </div>
             </div>
+            <img src="resources\img\server_1.21.4.png" alt="服务器图标">
         </div>
         <div class="server-card">
-            <h3>以匠魂枪械为主玩法的 1.20.1 服务器</h3>
-            <p>唔，这即将是玩过最多人的玩法服务器呢。<br>
-            这将一直开下去，发挥真正的光芒。</p>
-            <div class="buttons">
-                <button class="details-btn">详细信息</button>
-                <button class="contact-btn">联系腐竹</button>
+            <img src="resources\img\server_1.20.1.png" alt="服务器图标">
+            <div class="server-info">
+                <h3>以匠魂枪械为主玩法的 1.20.1 服务器</h3>
+                <p>唔，这即将是玩过最多人的玩法服务器呢。<br>
+                这将一直开下去，发挥真正的光芒。</p>
+                <div class="buttons">
+                    <button class="details-btn">详细信息</button>
+                    <button class="contact-btn">联系腐竹</button>
+                </div>
             </div>
         </div>
     </section>
 
+
     <section class="server-content">
         <h2>服务器内容大致展示</h2>
         <div class="server-carousel">
-            <div class="server-item">
-                <img src="resources\img\wallpaper_minecraft_winter_celebration_2048x2048.png" alt="服务器特色图片">
-                <div class="server-details">
-                    <h3>1.21.4 服务器——和谐友爱的大家</h3>
-                    <p>Description of featured product</p>
+            <div class="left">
+                <div class="server-item">
+                    <img src="resources\img\wallpaper_minecraft_winter_celebration_2048x2048.png" alt="服务器特色图片">
+                    <div class="server-details">
+                        <h3>1.21.4 服务器——和谐友爱的大家</h3>
+                        <p>Description of featured product</p>
+                    </div>
                 </div>
             </div>
-            <div class="server-item">
-                <img src="resources\img\tacz_img1.png" alt="服务器特色图片">
-                <div class="server-details">
-                    <h3>1.20.1 匠魂枪械玩法服务器——我这枪太 OK 了</h3>
-                    <p>Description of top product</p>
+            <div class="right">
+                <div class="server-item">
+                <div class="server-item">
+                    <img src="resources\img\tacz_img1.png" alt="服务器特色图片">
+                    <div class="server-details">
+                        <h3>1.20.1 匠魂枪械玩法服务器——我这枪太 OK 了</h3>
+                        <p>Description of top product</p>
+                    </div>
                 </div>
-            </div>
-            <div class="server-item">
-                <img src="resources\img\Fhome.jpg" alt="服务器特色图片">
-                <div class="server-details">
-                    <h3>1.21.4 服务器——龙蛋被藏在腐竹家里了</h3>
-                    <p>Description of lower product</p>
+                <div class="server-item">
+                    <img src="resources\img\Fhome.jpg" alt="服务器特色图片">
+                    <div class="server-details">
+                        <h3>1.21.4 服务器——龙蛋被藏在腐竹家里了</h3>
+                        <p>Description of lower product</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -82,6 +130,7 @@
 
     <section class="server-rules">
         <h2>体验服务器切记要遵守！</h2>
+        <h2></h2> <!-- 占位符 -->
         <div class="rule-item">
             <div class="icon">&#x1F4DC;</div>
             <div class="rule-content">
@@ -120,7 +169,8 @@
     </section>
 
     <footer>
-        <p>MCR:MC-墟壤纪</p>
+        <p>Copyright © 2021 MCR:MC-墟壤纪. All rights reserved.</p>
     </footer>
+    <script src="js/admin-login.js" defer></script>
 </body>
 </html>

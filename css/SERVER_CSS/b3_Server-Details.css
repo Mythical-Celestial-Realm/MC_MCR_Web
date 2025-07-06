@@ -1,0 +1,55 @@
+/* 服务器详情样式 */
+.left {
+    width: 50%;
+    height: 100%;  /* 固定高度100% */
+    padding-right: 20px;
+}
+
+.right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;  /* 总高度与左边一致 */
+
+}
+
+.server-carousel {
+    display: flex;
+    margin: 0 5%;
+    height: 100%;  /* 容器高度 */
+}
+
+.server-item {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    height: 100%;  /* 左边项目高度100% */
+}
+
+.right .server-item {
+    height: 100%;  
+
+}
+
+.server-item img {
+    width: 100%;
+    height: calc(100% - 60px);  /* 图片高度减去文字区域 */
+    object-fit: cover;
+}
+
+.server-details {
+    padding: 20px;
+}
+
+.server-details h3 {
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+}
+
+.server-content h2 {
+    font-size: 2rem;
+    color: #000;
+    margin: 0 0 40px 5%;  /* 添加左侧5%边距 */
+}
