@@ -75,20 +75,20 @@ include_once 'login.php';
                 被发现了，后果很严重。<br>
                 这将一直开下去，励志成为一个伟大的服务器。</p>
                 <div class="buttons">
-                    <button class="details-btn">详细信息</button>
+                    <a class="details-btn" href="server_detail.php?id=1">详细信息</a>
                     <button class="contact-btn">联系腐竹</button>
                 </div>
             </div>
-            <img src="resources\img\server_1.21.4.png" alt="服务器图标">
+            <img src="resources/img/server_1.21.4.png" alt="服务器图标">
         </div>
         <div class="server-card">
-            <img src="resources\img\server_1.20.1.png" alt="服务器图标">
+            <img src="resources/img/server_1.20.1.png" alt="服务器图标">
             <div class="server-info">
                 <h3>以匠魂枪械为主玩法的 1.20.1 服务器</h3>
                 <p>唔，这即将是玩过最多人的玩法服务器呢。<br>
                 这将一直开下去，发挥真正的光芒。</p>
                 <div class="buttons">
-                    <button class="details-btn">详细信息</button>
+                    <a class="details-btn" href="server_detail.php?id=2">详细信息</a>
                     <button class="contact-btn">联系腐竹</button>
                 </div>
             </div>
