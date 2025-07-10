@@ -41,13 +41,14 @@ include_once 'login.php';
     </div>
     <script src="js/admin-login.js" defer></script>
     <div id="adminLoginBox" class="admin-login-modal">
+        <div class="login-header">
+            <h3>管理员登录</h3>
+        </div>
         <form method="post" action="">
-            <h3>腐竹登录</h3>
-            <input type="text" name="username" placeholder="账号" required><br><br>
-            <input type="password" name="password" placeholder="密码" required><br><br>
+            <input type="text" name="username" placeholder="用户名" required>
+            <input type="password" name="password" placeholder="密码" required>
             <button type="submit" name="admin_login" class="admin-login-btn main">登录</button>
             <button type="button" id="cancelAdminLogin" class="admin-login-btn cancel">取消</button>
-            <div class="login-error-msg"><?php echo $login_error; ?></div>
         </form>
     </div>
     <script src="js/no-show.js" defer></script>

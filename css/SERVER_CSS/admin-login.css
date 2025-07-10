@@ -39,32 +39,86 @@
 .admin-login-modal {
     display: none;
     position: fixed;
-    top: 30%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 30px 32px 20px 32px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     z-index: 1000;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-    min-width: 260px;
+    width: 350px;
+    animation: fadeIn 0.3s ease-out;
 }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -45%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
 .admin-login-modal h3 {
-    margin-top: 0;
-    margin-bottom: 18px;
-    color: #4e9af1;
-    font-size: 20px;
+    color: #4a6baf;
     text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 600;
 }
+
 .admin-login-modal input[type="text"],
 .admin-login-modal input[type="password"] {
-    width: 90%;
-    padding: 7px 10px;
-    margin-bottom: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 15px;
+    width: 100%;
+    padding: 12px 0px;
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.admin-login-modal input[type="text"]:focus,
+.admin-login-modal input[type="password"]:focus {
+    border-color: #4a6baf;
+    box-shadow: 0 0 0 3px rgba(74, 107, 175, 0.1);
+    outline: none;
+}
+
+.admin-login-btn.main {
+    background: linear-gradient(135deg, #4a6baf 0%, #6b8cff 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.admin-login-btn.main:hover {
+    background: linear-gradient(135deg, #3a5b9f 0%, #5b7cef 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 107, 175, 0.3);
+}
+
+.admin-login-btn.cancel {
+    background: transparent;
+    color: #666;
+    border: 1px solid #ddd;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.admin-login-btn.cancel:hover {
+    background: #f5f5f5;
+    border-color: #ccc;
 }
 .admin-login-modal.plum-blossom {
     background: #fff8fc;
@@ -110,34 +164,52 @@
 }
 /* 用户提示区美化 */
 .user-tip-box {
-    margin: 20px 0;
-    text-align: center;
-    color: #888;
-    font-size: 16px;
-    background: #f8faff;
-    border-radius: 8px;
-    padding: 12px 0 10px 0;
-    box-shadow: 0 2px 8px rgba(78,154,241,0.04);
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-.hide-tip-btn {
-    margin-left: 10px;
+    margin: 10px 0;
+    padding: 8px 16px;
     font-size: 14px;
-    background: #eee;
-    color: #666;
-    border: none;
-    border-radius: 5px;
-    padding: 3px 12px;
-    cursor: pointer;
-    transition: background 0.2s;
+    background: #f8faff;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(78,154,241,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 改为居中排列 */
+    gap: 8px; /* 控制按钮间距 */
 }
+
+/* 或者如果你想保持两端对齐但缩小间距 */
+.user-tip-box.alternative {
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 12px; /* 减小内边距 */
+}
+
+.hide-tip-btn {
+    padding: 2px 10px;
+    font-size: 12px;
+    background: rgba(78,154,241,0.1);
+    color: #4e9af1;
+    border-radius: 4px;
+    transition: all 0.2s;
+    border: none; /* 移除边框 */
+    /* 或者使用自定义边框 */
+    /* border: 1px solid rgba(78,154,241,0.3); */
+}
+
 .hide-tip-btn:hover {
-    background: #e0e0e0;
+    background: rgba(78,154,241,0.2);
+    .hide-tip-btn:focus {
+        outline: none;
+
+    }
 }
+
+/* 如果想让登录按钮更紧凑 */
+.user-tip-box .admin-login-btn {
+    padding: 4px 12px;
+    font-size: 13px;
+    margin-right: 0;
+}
+
 .admin-welcome {
     margin-left: 10px;
     color: #4e9af1;
