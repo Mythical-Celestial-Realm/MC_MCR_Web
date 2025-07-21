@@ -94,6 +94,31 @@ include_once 'login.php';
                 </div>
             </div>
         </div>
+                <div class="server-card">
+            <div class="server-info">
+                <h3>1.21.8纯原版服务器</h3>
+                <p>一个等待开荒的服务器呢<br>
+                全新的世界正在等待你<br></p>
+                <div class="buttons">
+                    <button class="details-btn">详细信息</button>
+                    <button class="contact-btn">联系腐竹</button>
+                </div>
+            </div>
+            <img src="resources\img\MCV_SummerDrop_Hero_DotNet_Downloadable_Wallpaper_r2058x1440.png" alt="服务器图标">
+        </div>
+        <div class="server-card">
+            <img src="resources\img\Stormline.jpg" alt="服务器图标">
+            <div class="server-info">
+                <h3>Stormline风暴前线</h3>
+                <h3>1.20.1枪械对抗服务器</h3>
+                <p>有着经典1v1/2v2等对抗自带靶场等基础设施<br>
+                哪怕其他fps玩着不舒服，但我的世界一定适合你</p>
+                <div class="buttons">
+                    <button class="details-btn">详细信息</button>
+                    <button class="contact-btn">联系腐竹</button>
+                </div>
+            </div>
+        </div>
     </section>
 
 
@@ -105,7 +130,6 @@ include_once 'login.php';
                     <img src="resources\img\wallpaper_minecraft_winter_celebration_2048x2048.png" alt="服务器特色图片">
                     <div class="server-details">
                         <h3>1.21.4 服务器——和谐友爱的大家</h3>
-                        <p>Description of featured product</p>
                     </div>
                 </div>
             </div>
@@ -115,14 +139,12 @@ include_once 'login.php';
                     <img src="resources\img\tacz_img1.png" alt="服务器特色图片">
                     <div class="server-details">
                         <h3>1.20.1 匠魂枪械玩法服务器——我这枪太 OK 了</h3>
-                        <p>Description of top product</p>
                     </div>
                 </div>
                 <div class="server-item">
                     <img src="resources\img\Fhome.jpg" alt="服务器特色图片">
                     <div class="server-details">
                         <h3>1.21.4 服务器——龙蛋被藏在腐竹家里了</h3>
-                        <p>Description of lower product</p>
                     </div>
                 </div>
             </div>

@@ -97,7 +97,7 @@
             </div>
         </div>
 
-         <!-- 实验性结构阶段  -->
+        <!-- 实验性结构阶段  -->
         <!--b4-->
 
         <div class="b4">  
@@ -119,6 +119,26 @@
             </div>
         </div>
 
+        <!-- 实验性结构阶段  -->
+        <!--b4_1_-->
+        <div class="b4">  
+            <div class="b4_cards">
+                <div class="b4_card">
+                    <img src="resources/img/MCV_SummerDrop_Hero_DotNet_Downloadable_Wallpaper_r2058x1440.png" alt="1.21.4纯原版服务器">
+                    <p><strong>1.21.8纯原版服务器</strong><br/>
+                       一个等待开荒的服务器呢<br/>
+                       全新的世界正在等待你</p>
+                </div>
+                <div class="b4_card">
+                    <img src="resources/img/Stormline.jpg" alt="Stormline">
+                    <p><strong>Stormline风暴前线——1.20.1枪械对抗服务器</strong><br/>
+                       有着经典1v1/2v2等对抗自带靶场等基础设施<br/>
+                       哪怕其他fps玩着不舒服，但我的世界一定适合你<br/>
+                       嘻嘻！</p>
+                </div>
+            </div>
+        </div>
+
 
         <!--b5-->
 
@@ -131,7 +151,7 @@
                         <img src="resources\img\head1.jpg" alt="用户头像">
                         <div>
                             <p>FlchenX</p>
-                            <p>03.34</p>
+                            <p>7月15日</p>
                         </div>
                     </div>
                 </div>
@@ -141,16 +161,16 @@
                         <img src="resources/img/head2.jpg" alt="用户头像">
                         <div>
                             <p>Eternity</p>
-                            <p>03.21</p>
+                            <p>3月28日</p>
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <p>"……"<br><br></p>
+                    <p>"哪怕电脑带不动而无法亲临现场但支持墟壤纪这是毋庸置疑的。"<br><br></p>
                     <div class="user-info">
                         <img src="resources\img\head3.jpg" alt="用户头像">
                         <div>
-                            <p>……</p>
+                            <p>Chen</p>
                             <p>… …</p>
                         </div>
                     </div>

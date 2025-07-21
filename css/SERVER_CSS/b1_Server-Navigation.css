@@ -1,25 +1,15 @@
 /* 服务器导航样式 */
 header {
-    padding: 20px 5%;
     position: relative;
-    min-height: 55vh;
+    width: 100%;
+    height: 100vh;  /* 改为全屏高度 */
     background-size: cover;
     background-position: center;
     display: flex;
     flex-direction: column;
 }
 
-header::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.45);
-    z-index: 1;
-    pointer-events: none;
-}
+
 
 .logo {
     font-size: 24px;
@@ -57,17 +47,21 @@ nav a:hover {
     text-align: center;
     color: white;
     padding: 40px;
-    margin-top: 50px;
-    margin-bottom: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
 }
 
 .overlay h1 {
-    font-size: 2.5rem;
-    margin: 0 0 20px;
+    font-size: 4rem;  /* 从2.5rem增大到4rem */
+    margin: 0 0 30px;
+    font-weight: bold;
 }
 
 .overlay p {
-    font-size: 1.2rem;
+    font-size: 1.8rem;  /* 从1.2rem增大到1.8rem */
     margin: 0;
     opacity: 0.9;
 }
