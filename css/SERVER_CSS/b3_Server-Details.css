@@ -22,7 +22,7 @@
 
 .server-item {
     background: #fff;
-    border-radius: 0.88vw; /* 12/1366 ≈ 0.88vw */
+    border-radius: 0.88vw;
     overflow: hidden;
     height: 100%;
 }
@@ -58,5 +58,5 @@
 
 .server-item img[src*="tacz_img1.png"],
 .server-item img[src*="Fhome.jpg"] {
-    height: 13vw;
+    height: 15vw;
 }

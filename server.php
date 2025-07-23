@@ -4,6 +4,7 @@ include_once 'login.php';
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +19,8 @@ include_once 'login.php';
     <style>
         @font-face {
             font-family: "思源黑体";
-            font-display: swap; /* 字体加载策略: 优先使用本地缓存，如果本地缓存没有，则从网络下载 */
+            font-display: swap;
+            /* 字体加载策略: 优先使用本地缓存，如果本地缓存没有，则从网络下载 */
             src:
                 url("resources/font/SourceHanSansOLD-Light-2.otf"),
                 url("resources/font/SourceHanSansSC-Medium-2.otf"),
@@ -26,6 +28,7 @@ include_once 'login.php';
         }
     </style>
 </head>
+
 <body>
     <!-- 登录提示和表单 -->
     <div id="userTipBox" class="user-tip-box">
@@ -73,54 +76,28 @@ include_once 'login.php';
             <div class="server-info">
                 <h3>1.21.4 纯原版服务器</h3>
                 <p>不要作弊和开矿透哦awa<br>
-                被发现了，后果很严重。<br>
-                这将一直开下去，励志成为一个伟大的服务器。</p>
+                    被发现了，后果很严重。<br>
+                    这将一直开下去，励志成为一个伟大的服务器。</p>
                 <div class="buttons">
-                    <button class="details-btn">详细信息</button>
+                    <a class="details-btn" href="server_detail.php?id=1">详细信息</a>
                     <button class="contact-btn">联系腐竹</button>
                 </div>
             </div>
-            <img src="resources\img\server_1.21.4.png" alt="服务器图标">
+            <img src="resources/img/server_1.21.4.png" alt="服务器图标">
         </div>
         <div class="server-card">
-            <img src="resources\img\server_1.20.1.png" alt="服务器图标">
+            <img src="resources/img/server_1.20.1.png" alt="服务器图标">
             <div class="server-info">
                 <h3>以匠魂枪械为主玩法的 1.20.1 服务器</h3>
                 <p>唔，这即将是玩过最多人的玩法服务器呢。<br>
-                这将一直开下去，发挥真正的光芒。</p>
+                    这将一直开下去，发挥真正的光芒。</p>
                 <div class="buttons">
-                    <button class="details-btn">详细信息</button>
-                    <button class="contact-btn">联系腐竹</button>
-                </div>
-            </div>
-        </div>
-                <div class="server-card">
-            <div class="server-info">
-                <h3>1.21.8纯原版服务器</h3>
-                <p>一个等待开荒的服务器呢<br>
-                全新的世界正在等待你<br></p>
-                <div class="buttons">
-                    <button class="details-btn">详细信息</button>
-                    <button class="contact-btn">联系腐竹</button>
-                </div>
-            </div>
-            <img src="resources\img\MCV_SummerDrop_Hero_DotNet_Downloadable_Wallpaper_r2058x1440.png" alt="服务器图标">
-        </div>
-        <div class="server-card">
-            <img src="resources\img\Stormline.jpg" alt="服务器图标">
-            <div class="server-info">
-                <h3>Stormline风暴前线</h3>
-                <h3>1.20.1枪械对抗服务器</h3>
-                <p>有着经典1v1/2v2等对抗自带靶场等基础设施<br>
-                哪怕其他fps玩着不舒服，但我的世界一定适合你</p>
-                <div class="buttons">
-                    <button class="details-btn">详细信息</button>
+                    <a class="details-btn" href="server_detail.php?id=2">详细信息</a>
                     <button class="contact-btn">联系腐竹</button>
                 </div>
             </div>
         </div>
     </section>
-
 
     <section class="server-content">
         <h2>服务器内容大致展示</h2>
@@ -135,20 +112,20 @@ include_once 'login.php';
             </div>
             <div class="right">
                 <div class="server-item">
-                <div class="server-item">
-                    <img src="resources\img\tacz_img1.png" alt="服务器特色图片">
-                    <div class="server-details">
-                        <h3>1.20.1 匠魂枪械玩法服务器——我这枪太 OK 了</h3>
+                    <div class="server-item">
+                        <img src="resources\img\tacz_img1.png" alt="服务器特色图片">
+                        <div class="server-details">
+                            <h3>1.20.1 匠魂枪械玩法服务器——我这枪太 OK 了</h3>
+                        </div>
                     </div>
-                </div>
-                <div class="server-item">
-                    <img src="resources\img\Fhome.jpg" alt="服务器特色图片">
-                    <div class="server-details">
-                        <h3>1.21.4 服务器——龙蛋被藏在腐竹家里了</h3>
+                    <div class="server-item">
+                        <img src="resources\img\Fhome.jpg" alt="服务器特色图片">
+                        <div class="server-details">
+                            <h3>1.21.4 服务器——龙蛋被藏在腐竹家里了</h3>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <section class="server-rules">
@@ -196,4 +173,5 @@ include_once 'login.php';
     </footer>
     <script src="js/admin-login.js" defer></script>
 </body>
+
 </html>
